@@ -1,0 +1,14 @@
+nav {
+    text-align: right;
+    margin-bottom: 5%;
+}
+
+main {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}

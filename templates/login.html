@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}" type="text/css">
+
+	<script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/pages/login.js') }}"></script>
+</head>
+
+<body>
+	<nav>{% include 'include/nav.html' %}</nav>
+
+    <main>
+        <span class="error" id="errorOutput"></span>
+        <form onsubmit="return login();">
+            Nazwa użytkownika: <input id="username" type="text"> <br>
+            Hasło: <input id="password" type="password"> <br>
+            <input type="submit" value="Zaloguj się">
+        </form>
+    </main>
+</body>

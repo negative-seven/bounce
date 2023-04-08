@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Opis</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}" type="text/css">
+	
+	<script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+</head>
+
+<body>
+	<nav>{% include 'include/nav.html' %}</nav>
+
+	<main>
+		Symulacja przedstawia dwie toczące się kule, które odbijają się od siebie oraz od ściany
+		zderzeniami sprężystymi. Wybrać można kolory obu kul (kolory nie wpływają merytorycznie na
+		symulację) oraz stosunek masy kuli lewej do masy kuli prawej.
+		<br> <br>
+		Dla stosunku mas 100<sup>n</sup>, gdzie n jest liczbą całkowitą, liczba kolizji składa się
+		z pierwszych n + 1 cyfr dziesiętnych liczby pi.
+	</main>
+</body>

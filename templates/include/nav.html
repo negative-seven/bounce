@@ -1,0 +1,8 @@
+<a href="/">Symulacja</a>
+<a href="description">Opis</a>
+{% if current_user.is_authenticated %}
+    <a href="javascript:logout();">Wyloguj się ({{ current_user.name }})</a>
+{% else %}
+    <a href="login">Zaloguj się</a>
+    <a href="register">Zarejestruj się</a>
+{% endif %}

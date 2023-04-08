@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Symulacja</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}" type="text/css">
+
+	<script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/simulation.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/pages/index.js') }}"></script>
+</head>
+
+<body>
+	<nav>{% include 'include/nav.html' %}</nav>
+
+	<main>
+		Liczba zderzeń: <span id="collisionCount">0</span>
+
+		<div>
+			<canvas id="simulationCanvas" width="800" height="200"></canvas>
+		</div>
+
+		<button onclick="runClicked()">Uruchom</button> <br> <br>
+
+		Stosunek mas: <input id="massRatio" value="100000000"> <br>
+		Kolor lewej kuli: <input id="leftBallColor" type="color" value="#208020"> <br>
+		Kolor prawej kuli: <input id="rightBallColor" type="color" value="#802080"> <br>
+
+		{% if current_user.is_authenticated %}
+		Zapisane konfiguracje:
+		<select onchange="updateConfigurationButtons()" id="configurationsList">
+			<option value="">Wybierz</option>
+		</select>
+		<br>
+
+		<div id="loadRemoveWraper">
+			<button id="loadConfigurationButton" onclick="loadConfiguration();">Załaduj konfigurację</button> <br>
+			<button id="removeConfigurationButton" onclick="removeConfiguration();">Usuń konfigurację</button> <br>
+		</div>
+		<button onclick="saveConfiguration();">Zapisz obecną konfigurację jako nową</button> <br>
+		{% endif %}
+	</main>
+</body>
